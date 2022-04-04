@@ -34,30 +34,43 @@ module.exports = {
         );
       },
       network_id: 3,
-      numberOfAddresses: 1,
-      gas: 3502000,
-      gasPrice: 1500001236,
+      gas: 6700000,
+      gasPrice: 10000000000,
       networkCheckTimeout: 1000000,
       timeoutBlocks: 200,
       gasLimit: 8000000,
     },
-    testnet: {
-      provider: () =>
-        new HDWalletProvider(
+    rinkby: {
+      provider: function () {
+        return new HDWalletProvider(
           mnemonic,
-          `https://data-seed-prebsc-1-s1.binance.org:8545`
-        ),
-      network_id: 97,
-      networkCheckTimeout: 999999,
-    },
-    bsc: {
-      provider: () =>
-        new HDWalletProvider(mnemonic, `https://bsc-dataseed1.binance.org`),
-      network_id: 56,
-      confirmations: 10,
+          "https://speedy-nodes-nyc.moralis.io/e5419de13f9a415f6e823156/eth/rinkeby"
+        );
+      },
+      network_id: 4,
+      gas: 6700000,
+      gasPrice: 10000000000,
+      networkCheckTimeout: 1000000,
       timeoutBlocks: 200,
-      skipDryRun: true,
+      gasLimit: 8000000,
     },
+    // testnet: {
+    //   provider: () =>
+    //     new HDWalletProvider(
+    //       mnemonic,
+    //       `https://data-seed-prebsc-1-s1.binance.org:8545`
+    //     ),
+    //   network_id: 97,
+    //   networkCheckTimeout: 999999,
+    // },
+    // bsc: {
+    //   provider: () =>
+    //     new HDWalletProvider(mnemonic, `https://bsc-dataseed1.binance.org`),
+    //   network_id: 56,
+    //   confirmations: 10,
+    //   timeoutBlocks: 200,
+    //   skipDryRun: true,
+    // },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
